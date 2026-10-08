@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:HelloAvalonia.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="HelloAvalonia.Views.MainWindow"
+        x:DataType="vm:GreetingViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="HelloAvalonia">
+
+    <Design.DataContext>
+        <vm:GreetingViewModel />
+    </Design.DataContext>
+
+    <!-- WinForms版と同じ絶対座標配置(20,20 / 20,60 / 20,100)にするため Canvas を使用 -->
+    <Canvas>
+        <TextBox Canvas.Left="20" Canvas.Top="20" Width="200"
+                 Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Canvas.Left="20" Canvas.Top="60" Width="300"
+                   Text="{Binding Greeting}" />
+
+        <Button Canvas.Left="20" Canvas.Top="100"
+                Content="挨拶する"
+                Command="{Binding GreetCommand}" />
+    </Canvas>
+
+</Window>

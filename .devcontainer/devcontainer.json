@@ -1,0 +1,4 @@
+{
+  "name": "mvvm-winforms-vs-avalonia (.NET 10)",
+  "image": "mcr.microsoft.com/dotnet/sdk:10.0"
+}
