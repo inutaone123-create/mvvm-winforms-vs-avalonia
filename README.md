@@ -24,13 +24,13 @@
 - 自前の `INotifyPropertyChanged` / `ICommand` 実装(ボイラープレート)と、`CommunityToolkit.Mvvm`(`[ObservableProperty]` / `[RelayCommand]`)での書き方を比較。
 - .NET 8 以降の WinForms で `Button.Command` が使えるようになった点。
 - ViewModel を `net10.0` のクラスライブラリ(`MyWinFormsApp.Core`)に分離すると、Linux でもユニットテストが動く。
-- 記事: (公開後にリンクを追記)
+- 記事: [WindowsFormsでMVVMをやろうとして自己満足で終わった話と、.NET 10ならこう書ける話](https://qiita.com/inuta-one/items/4cb48340bdfe32b15592)
 
 ### 記事2: 同じ画面を Avalonia で再現(`avalonia/`)
 - `dotnet new avalonia.mvvm` のテンプレートをベースに、記事1と同じ ViewModel / 画面 / テストを移植。
 - テンプレートの ViewModel は `[ObservableProperty] public partial string Name { get; set; }`(partial property 方式)。記事1の `private string _name`(フィールド方式)とは書き方が違うが、テストコードは変わらない。
 - アプリ本体が `net10.0`(OS 非依存)なので、**ViewModel を別プロジェクトに分けなくても**テストから直接参照でき、Linux でもテストが通る。
-- 記事: (公開後にリンクを追記)
+- 記事: [WinFormsのMVVMサンプルをAvaloniaに移植したら、Linuxでもテストが「分離なし」で通った話](https://qiita.com/inuta-one/items/9b8c97042fb790d72994)
 
 ## 前提
 
